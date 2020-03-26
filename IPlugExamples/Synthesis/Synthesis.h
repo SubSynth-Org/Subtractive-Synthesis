@@ -1,6 +1,8 @@
 #ifndef __Synthesis__
 #define __Synthesis__
 
+//test line
+
 #include "IPlug_include_in_plug_hdr.h"
 #include "Oscillator.h"
 
