@@ -39,7 +39,11 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="NSMenuItem" id="694149608">
 						<reference key="NSMenu" ref="649796088"/>
+<<<<<<< Updated upstream
 						<string key="NSTitle">IPlugEffect</string>
+=======
+						<string key="NSTitle">Synthesis</string>
+>>>>>>> Stashed changes
 						<string key="NSKeyEquiv"/>
 						<int key="NSKeyEquivModMask">1048576</int>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -53,12 +57,20 @@
 						</object>
 						<string key="NSAction">submenuAction:</string>
 						<object class="NSMenu" key="NSSubmenu" id="110575045">
+<<<<<<< Updated upstream
 							<string key="NSTitle">IPlugEffect</string>
+=======
+							<string key="NSTitle">Synthesis</string>
+>>>>>>> Stashed changes
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="238522557">
 									<reference key="NSMenu" ref="110575045"/>
+<<<<<<< Updated upstream
 									<string key="NSTitle">About IPlugEffect</string>
+=======
+									<string key="NSTitle">About Synthesis</string>
+>>>>>>> Stashed changes
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -127,7 +139,11 @@
 								</object>
 								<object class="NSMenuItem" id="755159360">
 									<reference key="NSMenu" ref="110575045"/>
+<<<<<<< Updated upstream
 									<string key="NSTitle">Hide IPlugEffect</string>
+=======
+									<string key="NSTitle">Hide Synthesis</string>
+>>>>>>> Stashed changes
 									<string key="NSKeyEquiv">h</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -165,7 +181,11 @@
 								</object>
 								<object class="NSMenuItem" id="632727374">
 									<reference key="NSMenu" ref="110575045"/>
+<<<<<<< Updated upstream
 									<string key="NSTitle">Quit IPlugEffect</string>
+=======
+									<string key="NSTitle">Quit Synthesis</string>
+>>>>>>> Stashed changes
 									<string key="NSKeyEquiv">q</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1027,7 +1047,11 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+<<<<<<< Updated upstream
 		<string key="IBDocument.LastKnownRelativeProjectPath">../../IPlugEffect.xcodeproj</string>
+=======
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../Synthesis.xcodeproj</string>
+>>>>>>> Stashed changes
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>

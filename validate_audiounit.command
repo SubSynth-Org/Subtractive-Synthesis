@@ -6,6 +6,7 @@ BASEDIR=$(dirname $0)
 
 cd $BASEDIR
 
+<<<<<<< Updated upstream
 OS_VERSION=`sw_vers -productVersion | egrep -o '10\.[0-9]+'`
 
 x86_ARGS=""
@@ -20,6 +21,8 @@ else
   x64_ARGS="-64"
 fi
 
+=======
+>>>>>>> Stashed changes
 PUID=`echo | grep PLUG_UNIQUE_ID resource.h`
 PUID=${PUID//\#define PLUG_UNIQUE_ID }
 PUID=${PUID//\'}
@@ -34,6 +37,12 @@ PII=${PII//\#define PLUG_IS_INST }
 PDM=`echo | grep PLUG_DOES_MIDI resource.h`
 PDM=${PDM//\#define PLUG_DOES_MIDI }
 
+<<<<<<< Updated upstream
+=======
+echo $PII
+echo $PDM
+
+>>>>>>> Stashed changes
 TYPE=aufx
 
 if [ $PII == 1 ] # instrument
@@ -55,7 +64,11 @@ then
 	export MallocStackLogging=1
 	set env MallocStackLoggingNoCompact=1
 
+<<<<<<< Updated upstream
 	auval $x86_ARGS -v $TYPE $PUID $PMID -w -q
+=======
+	auval -v $TYPE $PUID $PMID -w -q
+>>>>>>> Stashed changes
 	
 	unset MallocStackLogging
 
@@ -68,7 +81,11 @@ else
 	echo "--------------------------------------------------"
 	echo "--------------------------------------------------"
 	
+<<<<<<< Updated upstream
 	auval $x86_ARGS -v $TYPE $PUID $PMID
+=======
+	auval -v $TYPE $PUID $PMID
+>>>>>>> Stashed changes
 	
 	echo "\nvalidating i386 64 bit... ------------------------"
 	echo "--------------------------------------------------"
@@ -77,8 +94,24 @@ else
 	echo "--------------------------------------------------"
 	echo "--------------------------------------------------"
 	
+<<<<<<< Updated upstream
 	auval $x64_ARGS -v $TYPE $PUID $PMID
 
+=======
+	auval -64 -v $TYPE $PUID $PMID
+	
+	#[ -e "/var/db/receipts/com.apple.pkg.Rosetta.plist" ] && echo Rosetta installed || echo Rosetta NOT installed
+	#ppc auval not available on 10.6 
+	
+	#echo "\nvalidating ppc 32 bit... -------------------------"
+	#echo "--------------------------------------------------"
+	#echo "--------------------------------------------------"
+	#echo "--------------------------------------------------"
+	#echo "--------------------------------------------------"
+	#echo "--------------------------------------------------"
+	
+	#auval -ppc -v $TYPE $PUID $PMID
+>>>>>>> Stashed changes
 fi
 
 echo "done"

@@ -21,4 +21,10 @@ gui/*
 
 Icon?
 .DS_Stor*
+<<<<<<< Updated upstream
 .vs/*
+=======
+
+DerivedData
+build
+>>>>>>> Stashed changes

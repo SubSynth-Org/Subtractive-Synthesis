@@ -6,7 +6,11 @@ REM - zipping requires 7zip in %ProgramFiles%\7-Zip\7z.exe
 REM - building installer requires innotsetup in "%ProgramFiles(x86)%\Inno Setup 5\iscc"
 REM - AAX codesigning requires ashelper tool added to %PATH% env variable and aax.key/.crt in .\..\..\..\Certificates\
 
+<<<<<<< Updated upstream
 echo Making DigitalDistortion win distribution ...
+=======
+echo Making Synthesis win distribution ...
+>>>>>>> Stashed changes
 
 echo ------------------------------------------------------------------
 echo Updating version numbers ...
@@ -33,6 +37,7 @@ REM - set preprocessor macros like this, for instance to enable demo build:
 REM - SET CMDLINE_DEFINES="DEMO_VERSION"
 
 REM - Could build individual targets like this:
+<<<<<<< Updated upstream
 REM - msbuild DigitalDistortion-app.vcxproj /p:configuration=release /p:platform=win32
 
 msbuild DigitalDistortion.sln /p:configuration=release /p:platform=win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly 
@@ -42,6 +47,17 @@ msbuild DigitalDistortion.sln /p:configuration=release /p:platform=x64 /nologo /
 #echo Code sign aax binary...
 #REM - x86
 #REM - x64
+=======
+REM - msbuild Synthesis-app.vcxproj /p:configuration=release /p:platform=win32
+
+msbuild Synthesis.sln /p:configuration=release /p:platform=win32 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly 
+msbuild Synthesis.sln /p:configuration=release /p:platform=x64 /nologo /noconsolelogger /fileLogger /v:quiet /flp:logfile=build-win.log;errorsonly;append
+
+echo ------------------------------------------------------------------
+echo Code sign aax binary...
+call ashelper -f .\build-win\aax\bin\Synthesis.aaxplugin\Contents\Win32\Synthesis.aaxplugin -l .\..\..\..\Certificates\aax.crt -k .\..\..\..\Certificates\aax.key -o .\build-win\aax\bin\Synthesis.aaxplugin\Contents\Win32\Synthesis.aaxplugin
+REM - call ashelper -f .\build-win\aax\bin\Synthesis.aaxplugin\Contents\x64\Synthesis.aaxplugin -l .\..\..\..\Certificates\aax.crt -k .\..\..\..\Certificates\aax.key -o .\build-win\aax\bin\Synthesis.aaxplugin\Contents\x64\Synthesis.aaxplugin
+>>>>>>> Stashed changes
 
 REM - Make Installer (InnoSetup)
 
@@ -51,18 +67,31 @@ echo Making Installer ...
 if exist "%ProgramFiles(x86)%" (goto 64-Bit-is) else (goto 32-Bit-is)
 
 :32-Bit-is
+<<<<<<< Updated upstream
 "%ProgramFiles%\Inno Setup 5\iscc" /cc ".\installer\DigitalDistortion.iss"
 goto END-is
 
 :64-Bit-is
 "%ProgramFiles(x86)%\Inno Setup 5\iscc" /cc ".\installer\DigitalDistortion.iss"
+=======
+"%ProgramFiles%\Inno Setup 5\iscc" /cc ".\installer\Synthesis.iss"
+goto END-is
+
+:64-Bit-is
+"%ProgramFiles(x86)%\Inno Setup 5\iscc" /cc ".\installer\Synthesis.iss"
+>>>>>>> Stashed changes
 goto END-is
 
 :END-is
 
 REM - ZIP
+<<<<<<< Updated upstream
 REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\DigitalDistortion-win-32bit.zip .\build-win\app\win32\bin\DigitalDistortion.exe .\build-win\vst3\win32\bin\DigitalDistortion.vst3 .\build-win\vst2\win32\bin\DigitalDistortion.dll .\build-win\rtas\bin\DigitalDistortion.dpm .\build-win\rtas\bin\DigitalDistortion.dpm.rsr .\build-win\aax\bin\DigitalDistortion.aaxplugin* .\installer\license.rtf .\installer\readmewin.rtf
 REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\DigitalDistortion-win-64bit.zip .\build-win\app\x64\bin\DigitalDistortion.exe .\build-win\vst3\x64\bin\DigitalDistortion.vst3 .\build-win\vst2\x64\bin\DigitalDistortion.dll .\installer\license.rtf .\installer\readmewin.rtf
+=======
+REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\Synthesis-win-32bit.zip .\build-win\app\win32\bin\Synthesis.exe .\build-win\vst3\win32\bin\Synthesis.vst3 .\build-win\vst2\win32\bin\Synthesis.dll .\build-win\rtas\bin\Synthesis.dpm .\build-win\rtas\bin\Synthesis.dpm.rsr .\build-win\aax\bin\Synthesis.aaxplugin* .\installer\license.rtf .\installer\readmewin.rtf
+REM - "%ProgramFiles%\7-Zip\7z.exe" a .\installer\Synthesis-win-64bit.zip .\build-win\app\x64\bin\Synthesis.exe .\build-win\vst3\x64\bin\Synthesis.vst3 .\build-win\vst2\x64\bin\Synthesis.dll .\installer\license.rtf .\installer\readmewin.rtf
+>>>>>>> Stashed changes
 
 echo ------------------------------------------------------------------
 echo Printing log file to console...
