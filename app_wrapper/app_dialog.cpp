@@ -19,24 +19,13 @@ void PopulateSampleRateList(HWND hwndDlg, RtAudio::DeviceInfo* inputDevInfo, RtA
 
   std::vector<int> matchedSRs;
 
-<<<<<<< Updated upstream
-  if(inputDevInfo->probed && outputDevInfo->probed)
-  {
-    for (int i=0; i<inputDevInfo->sampleRates.size(); i++)
-    {
-      for (int j=0; j<outputDevInfo->sampleRates.size(); j++)
-      {
-        if(inputDevInfo->sampleRates[i] == outputDevInfo->sampleRates[j])
-          matchedSRs.push_back(inputDevInfo->sampleRates[i]);
-      }
-=======
+
   for (int i=0; i<inputDevInfo->sampleRates.size(); i++)
   {
     for (int j=0; j<outputDevInfo->sampleRates.size(); j++)
     {
       if(inputDevInfo->sampleRates[i] == outputDevInfo->sampleRates[j])
         matchedSRs.push_back(inputDevInfo->sampleRates[i]);
->>>>>>> Stashed changes
     }
   }
 
@@ -57,12 +46,10 @@ void PopulateAudioInputList(HWND hwndDlg, RtAudio::DeviceInfo* info)
   SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_IN_L,CB_RESETCONTENT,0,0);
   SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_IN_R,CB_RESETCONTENT,0,0);
 
-<<<<<<< Updated upstream
+
   if(!info->probed)
     return;
 
-=======
->>>>>>> Stashed changes
   int i;
 
   for (i=0; i<info->inputChannels -1; i++)
@@ -90,18 +77,9 @@ void PopulateAudioOutputList(HWND hwndDlg, RtAudio::DeviceInfo* info)
 
   int i;
 
-<<<<<<< Updated upstream
-  if(!info->probed)
-    return;
-
-  for (i=0; i<info->outputChannels -1; i++)
-  {
-=======
 //  for (int i=0; i<info.outputChannels; i++) {
   for (i=0; i<info->outputChannels -1; i++)
   {
-
->>>>>>> Stashed changes
     wsprintf(buf,"%i",i+1);
     SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_OUT_L,CB_ADDSTRING,0,(LPARAM)buf);
     SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_OUT_R,CB_ADDSTRING,0,(LPARAM)buf);
@@ -163,29 +141,11 @@ void PopulateDriverSpecificControls(HWND hwndDlg)
 
   SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_OUT_DEV,CB_SETCURSEL, outdevidx, 0);
 
-<<<<<<< Updated upstream
-  RtAudio::DeviceInfo inputDevInfo;
-  RtAudio::DeviceInfo outputDevInfo;
-
-  if(gAudioInputDevs.size())
-  {
-    inputDevInfo = gDAC->getDeviceInfo(gAudioInputDevs[indevidx]);
-    PopulateAudioInputList(hwndDlg, &inputDevInfo);
-  }
-
-  if(gAudioOutputDevs.size())
-  {
-    outputDevInfo = gDAC->getDeviceInfo(gAudioOutputDevs[outdevidx]);
-    PopulateAudioOutputList(hwndDlg, &outputDevInfo);
-  }
-
-=======
   RtAudio::DeviceInfo inputDevInfo = gDAC->getDeviceInfo(gAudioInputDevs[indevidx]);
   RtAudio::DeviceInfo outputDevInfo = gDAC->getDeviceInfo(gAudioOutputDevs[outdevidx]);
 
   PopulateAudioInputList(hwndDlg, &inputDevInfo);
   PopulateAudioOutputList(hwndDlg, &outputDevInfo);
->>>>>>> Stashed changes
   PopulateSampleRateList(hwndDlg, &inputDevInfo, &outputDevInfo);
 }
 
@@ -293,11 +253,7 @@ void PopulatePreferencesDialog(HWND hwndDlg)
   PopulateMidiDialogs(hwndDlg);
 }
 
-<<<<<<< Updated upstream
 #elif defined OS_OSX
-=======
-#else if defined OS_OSX
->>>>>>> Stashed changes
 void PopulatePreferencesDialog(HWND hwndDlg)
 {
   SendDlgItemMessage(hwndDlg,IDC_COMBO_AUDIO_DRIVER,CB_ADDSTRING,0,(LPARAM)"CoreAudio");
@@ -363,16 +319,8 @@ WDL_DLGRET PreferencesDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lPa
               TryToChangeAudioDriverType();
               ProbeAudioIO();
 
-<<<<<<< Updated upstream
-              if(gAudioInputDevs.size())
-                strcpy(gState->mAudioInDev,GetAudioDeviceName(gAudioInputDevs[0]).c_str());
-
-              if(gAudioOutputDevs.size())
-                strcpy(gState->mAudioOutDev,GetAudioDeviceName(gAudioOutputDevs[0]).c_str());
-=======
               strcpy(gState->mAudioInDev,GetAudioDeviceName(gAudioInputDevs[0]).c_str());
               strcpy(gState->mAudioOutDev,GetAudioDeviceName(gAudioOutputDevs[0]).c_str());
->>>>>>> Stashed changes
 
               // Reset IO
               gState->mAudioOutChanL = 1;
@@ -604,11 +552,7 @@ WDL_DLGRET MainDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam)
           if(!gPluginInstance->HostRequestingAboutBox())
           {
             char version[50];
-<<<<<<< Updated upstream
-            sprintf(version, BUNDLE_MFR"\nBuilt on " __DATE__);
-=======
             //sprintf(version, BUNDLE_MFR"\nBuilt on "__DATE__);
->>>>>>> Stashed changes
             MessageBox(hwndDlg,version, BUNDLE_NAME, MB_OK);
           }
           return 0;

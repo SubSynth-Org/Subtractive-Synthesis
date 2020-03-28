@@ -12,15 +12,9 @@
 
  App settings are stored in a .ini file. The location is as follows:
 
-<<<<<<< Updated upstream
- Windows7: C:\Users\USERNAME\AppData\Local\DigitalDistortion\settings.ini
- Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\DigitalDistortion\settings.ini
- OSX: /Users/USERNAME/Library/Application\ Support/DigitalDistortion/settings.ini
-=======
  Windows7: C:\Users\USERNAME\AppData\Local\Synthesis\settings.ini
  Windows XP/Vista: C:\Documents and Settings\USERNAME\Local Settings\Application Data\Synthesis\settings.ini
  OSX: /Users/USERNAME/Library/Application\ Support/Synthesis/settings.ini
->>>>>>> Stashed changes
 
 */
 
@@ -33,19 +27,11 @@
 
   #define DAC_DS 0
   #define DAC_ASIO 1
-<<<<<<< Updated upstream
-#elif defined OS_OSX
-  #include "swell.h"
-  #define SLEEP( milliseconds ) usleep( (unsigned long) (milliseconds * 1000.0) )
-
-  #define DEFAULT_INPUT_DEV "Built-in Input"
-=======
-#else if defined OS_OSX
+  #else if defined OS_OSX
   #include "swell.h"
   #define SLEEP( milliseconds ) usleep( (unsigned long) (milliseconds * 1000.0) )
 
   #define DEFAULT_INPUT_DEV "Built-in Microphone"
->>>>>>> Stashed changes
   #define DEFAULT_OUTPUT_DEV "Built-in Output"
 
   #define DAC_COREAUDIO 0
@@ -58,11 +44,8 @@
 #include <string>
 #include <vector>
 
-<<<<<<< Updated upstream
-#include "../DigitalDistortion.h" // change this to match your iplug plugin .h file
-=======
 #include "../Synthesis.h" // change this to match your iplug plugin .h file
->>>>>>> Stashed changes
+
 
 typedef unsigned short UInt16;
 

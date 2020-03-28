@@ -237,11 +237,7 @@ void MIDICallback( double deltatime, std::vector< unsigned char > *message, void
 {
   if ( message->size() )
   {
-<<<<<<< Updated upstream
-    IMidiMsg *myMsg = nullptr; //TODO: FUCK THIS IS HORRIBLE
-=======
     IMidiMsg *myMsg;
->>>>>>> Stashed changes
 
     switch (message->size())
     {
@@ -259,11 +255,7 @@ void MIDICallback( double deltatime, std::vector< unsigned char > *message, void
         break;
     }
 
-<<<<<<< Updated upstream
-    IMidiMsg msg(*myMsg); //TODO: FUCK THIS IS HORRIBLE
-=======
     IMidiMsg msg(*myMsg);
->>>>>>> Stashed changes
 
     delete myMsg;
 
@@ -760,11 +752,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdPa
     {
       // folder doesn't exist - make folder and make file
       CreateDirectory(gINIPath, NULL);
-<<<<<<< Updated upstream
-      sprintf(gINIPath, "%s\\%s", gINIPath, "settings.ini"); // add file name to path
-=======
       sprintf(gINIPath, "%s%s", gINIPath, "settings.ini"); // add file name to path
->>>>>>> Stashed changes
       UpdateINI(); // will write file if doesn't exist
     }
 
@@ -1065,8 +1053,4 @@ MENUITEM "&About",                      ID_ABOUT
 END
 SWELL_DEFINE_MENU_RESOURCE_END(IDR_MENU1)
 
-<<<<<<< Updated upstream
 #endif
-=======
-#endif
->>>>>>> Stashed changes
