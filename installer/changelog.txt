@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-DigitalDistortion changelog
-=======
 Synthesis changelog
->>>>>>> Stashed changes
 www.olilarkin.co.uk
 
 00/00/00 - v1.00 initial release
