@@ -1,7 +1,13 @@
-﻿  Oscillator.cpp
+﻿  EnvelopeGenerator.cpp
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\EnvelopeGenerator.cpp(48,57): warning C4244: '=': conversion from 'double' to 'unsigned __int64', possible loss of data
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\EnvelopeGenerator.cpp(118,54): warning C4244: 'initializing': conversion from 'double' to 'unsigned __int64', possible loss of data
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\EnvelopeGenerator.cpp(167,54): warning C4244: 'initializing': conversion from 'double' to 'unsigned __int64', possible loss of data
+  Filter.cpp
+  Oscillator.cpp
   Source.cpp
   Generating Code...
-C:\Users\ye\Desktop\testingSynth\Oscillator.cpp(129): warning C4715: 'Oscillator::testGenerate': not all control paths return a value
-C:\Users\ye\Desktop\testingSynth\Oscillator.cpp(181): warning C4715: 'Oscillator::testGenerateLimits': not all control paths return a value
-C:\Users\ye\Desktop\testingSynth\Oscillator.cpp(245): warning C4715: 'Oscillator::testNextSample': not all control paths return a value
-  testingSynth.vcxproj -> C:\Users\ye\Desktop\testingSynth\Debug\testingSynth.exe
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\Oscillator.cpp(181): warning C4715: 'Oscillator::testGenerateLimits': not all control paths return a value
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\Oscillator.cpp(129): warning C4715: 'Oscillator::testGenerate': not all control paths return a value
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\Oscillator.cpp(245): warning C4715: 'Oscillator::testNextSample': not all control paths return a value
+C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\EnvelopeGenerator.cpp(188): warning C4715: 'EnvelopeGenerator::testSetStageValue': not all control paths return a value
+  testingSynth.vcxproj -> C:\Users\ye\Desktop\Subtractive-Synthesis\testingSynth\Debug\testingSynth.exe

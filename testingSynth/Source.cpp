@@ -28,7 +28,7 @@ Oscillator* testNextSample = new Oscillator;
     REQUIRE(testFilter->process(0.99) > 0.0);
 } */
 
-/*TEST_CASE("Test for EnvelopeGen") {
+/* TEST_CASE("Test for EnvelopeGen") {
     // case for inputs > 1, startLevel < endLevel --> multiplier > 1
     REQUIRE(testGen->testCalculateMultiplier(1.1, 1.2, 1000) > 1);
     // case for inputs < 1, startLevel > endLevel --> multiplier < 1
