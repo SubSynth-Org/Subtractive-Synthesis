@@ -1,9 +1,9 @@
-#define PLUG_MFR "YourName"
+#define PLUG_MFR "JeseHernandez"
 #define PLUG_NAME "DigitalDistortion"
 
 #define PLUG_CLASS_NAME DigitalDistortion
 
-#define BUNDLE_MFR "YourName"
+#define BUNDLE_MFR "JeseHernandez"
 #define BUNDLE_NAME "DigitalDistortion"
 
 #define PLUG_ENTRY DigitalDistortion_Entry
@@ -36,13 +36,13 @@
   const int PLUG_TYPE_IDS_AS[2] = {'EFA1', 'EFA2'}; // AudioSuite
 #endif
 
-#define PLUG_MFR_PT "YourName\nYourName\nAcme"
+#define PLUG_MFR_PT "JeseHernandez\nJeseHernandez\nAcme"
 #define PLUG_NAME_PT "DigitalDistortion\nIPEF"
 #define PLUG_TYPE_PT "Effect"
 #define PLUG_DOES_AUDIOSUITE 1
 
-/* PLUG_TYPE_PT can be "None", "EQ", "Dynamics", "PitchShift", "Reverb", "Delay", "Modulation",
-"Harmonic" "NoiseReduction" "Dither" "SoundField" "Effect"
+/* PLUG_TYPE_PT can be "None", "EQ", "Dynamics", "PitchShift", "Reverb", "Delay", "Modulation", 
+"Harmonic" "NoiseReduction" "Dither" "SoundField" "Effect" 
 instrument determined by PLUG _IS _INST
 */
 
@@ -58,13 +58,15 @@ instrument determined by PLUG _IS _INST
 
 // Unique IDs for each image resource.
 #define KNOB_ID 101
+#define BACKGROUND_ID 102
 
 // Image resource locations for this plug.
 #define KNOB_FN "resources/img/knob.png"
+#define BACKGROUND_FN "resources/img/background.png"
 
 // GUI default dimensions
-#define GUI_WIDTH 300
-#define GUI_HEIGHT 300
+#define GUI_WIDTH 280
+#define GUI_HEIGHT 230
 
 // on MSVC, you must define SA_API in the resource editor preprocessor macros as well as the c++ ones
 #if defined(SA_API)
@@ -84,5 +86,3 @@ instrument determined by PLUG _IS _INST
 "Spatial|Fx", "OnlyRT", "OnlyOfflineProcess", "Mono", "Stereo",
 "Surround"
 */
-#define GUI_WIDTH 300
-#define GUI_HEIGHT 300
